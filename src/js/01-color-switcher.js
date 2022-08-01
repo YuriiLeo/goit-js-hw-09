@@ -4,11 +4,13 @@ const refs = {
 };
 const PROMPT_DELAY = 1000;
 let btnIsActive = false;
+let timerId;
 // vuznachennya dovilnogo kolory
 function getRandomHexColor() {
     return `#${Math.floor(Math.random() * 16777215)
       .toString(16)
-      .padStart(6, 0)}`;
+    .padStart(6, 0)}`;
+  return;
 };
 
 // Povisuv zminy bcg 
@@ -16,6 +18,7 @@ function getRandomHexColor() {
     let color = getRandomHexColor();
     console.log(color);
     document.body.setAttribute('style', `background: ${color}`);
+    return;
 };
 
 // Zmina bcg z intervalom
@@ -26,6 +29,7 @@ function StartTimerChangeColor() {
   }
   timerId = setInterval(handleChangeColor, PROMPT_DELAY);
   btnIsActive = true;
+  return;
 }
 
 // Zupunka zminu
@@ -33,6 +37,7 @@ function StopTimerChangeColor () {
   clearInterval(timerId);
   // refs.btnStartChangeColor.addEventListener("click", StartTimerChangeColor);
   btnIsActive = false;
+  return;
 }
  
 
