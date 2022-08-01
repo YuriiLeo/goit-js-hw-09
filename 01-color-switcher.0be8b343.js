@@ -1,2 +1,0 @@
-const t={btnStartChangeColor:document.querySelector("[data-start]"),btnStopChangeColor:document.querySelector("[data-stop]")};let e=!1;function o(){let t=`#${Math.floor(16777215*Math.random()).toString(16).padStart(6,0)}`;console.log(t),document.body.setAttribute("style",`background: ${t}`)}t.btnStartChangeColor.addEventListener("click",(function(){e||(timerId=setInterval(o,1e3),e=!0)})),t.btnStopChangeColor.addEventListener("click",(function(){clearInterval(timerId),e=!1}));
-//# sourceMappingURL=01-color-switcher.0be8b343.js.map

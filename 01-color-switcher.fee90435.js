@@ -1,0 +1,2 @@
+!function(){var t,n={btnStartChangeColor:document.querySelector("[data-start]"),btnStopChangeColor:document.querySelector("[data-stop]")},o=!1;function e(){var t="#".concat(Math.floor(16777215*Math.random()).toString(16).padStart(6,0));console.log(t),document.body.setAttribute("style","background: ".concat(t))}n.btnStartChangeColor.addEventListener("click",(function(){o||(t=setInterval(e,1e3),o=!0)})),n.btnStopChangeColor.addEventListener("click",(function(){clearInterval(t),o=!1}))}();
+//# sourceMappingURL=01-color-switcher.fee90435.js.map

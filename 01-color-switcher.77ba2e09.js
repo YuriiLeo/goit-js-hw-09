@@ -1,2 +1,0 @@
-!function(){var t={btnStartChangeColor:document.querySelector("[data-start]"),btnStopChangeColor:document.querySelector("[data-stop]")},n=!1;function o(){var t="#".concat(Math.floor(16777215*Math.random()).toString(16).padStart(6,0));console.log(t),document.body.setAttribute("style","background: ".concat(t))}t.btnStartChangeColor.addEventListener("click",(function(){n||(timerId=setInterval(o,1e3),n=!0)})),t.btnStopChangeColor.addEventListener("click",(function(){clearInterval(timerId),n=!1}))}();
-//# sourceMappingURL=01-color-switcher.77ba2e09.js.map
