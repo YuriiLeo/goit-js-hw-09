@@ -3,6 +3,8 @@ import flatpickr from "flatpickr";
 // Додатковий імпорт стилів
 import "flatpickr/dist/flatpickr.min.css";
 
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
 const refs = {
  daysEl : document.querySelector("[data-days]"),
  hoursEl : document.querySelector("[data-hours]"),
@@ -25,7 +27,7 @@ const options = {
   onClose(selectedDates) {
     deltaTime = selectedDates[0] - currentTime;
     if (deltaTime <= 0) {
-      return alert("Please choose a date in the future");
+      return Notify.warning("Please choose a date in the future");
     } else {
       refs.btnTimerStart.removeAttribute('disabled');
       chosenByYouDate = selectedDates[0].getTime();
@@ -70,3 +72,4 @@ function convertMs(ms) {
   const seconds = Math.floor((((ms % day) % hour) % minute) / second);
   return { days, hours, minutes, seconds };
 }
+
