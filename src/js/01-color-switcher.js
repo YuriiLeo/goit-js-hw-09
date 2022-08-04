@@ -2,6 +2,7 @@ const refs = {
  btnStartChangeColor: document.querySelector("[data-start]"),
  btnStopChangeColor: document.querySelector("[data-stop]")
 };
+
 const PROMPT_DELAY = 1000;
 let btnIsActive = false;
 let timerId;
@@ -29,6 +30,8 @@ function StartTimerChangeColor() {
   }
   timerId = setInterval(handleChangeColor, PROMPT_DELAY);
   btnIsActive = true;
+  refs.btnStartChangeColor.setAttribute("disabled", true);
+
   return;
 }
 
@@ -37,6 +40,7 @@ function StopTimerChangeColor () {
   clearInterval(timerId);
   // refs.btnStartChangeColor.addEventListener("click", StartTimerChangeColor);
   btnIsActive = false;
+  refs.btnStartChangeColor.removeAttribute("disabled");
   return;
 }
  
